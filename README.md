@@ -1,3 +1,7 @@
+Filer ni ska skapa själva!
+config.php
+
+
 2017-05-07. 
 Filmer läggs upp av en redaktör. Redaktören står för rateing. 
 
