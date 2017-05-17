@@ -1,0 +1,7 @@
+{
+    "name": "casa/movie",
+    "description": "Movie Database",
+    "require": {
+        "illuminate/database": "^5.2"
+    }
+}
