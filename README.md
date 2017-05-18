@@ -6,19 +6,28 @@ config.php
 Filmer läggs upp av en redaktör. Redaktören står för rateing. 
 
 Filmer
- -Titel
- -Skådespelare
- -Genre
- -Trailer
- -Sammanfattning
- -Rate
+ -ID (INT)
+ -Titel (VARCHAR)
+ -Producer (INT)
+ -Writer (INT)
+ -Rate (INT)
+ -Genre (VARCHAR)
+ -Trailer (VARCHAR)
+ -Info (TEXT)
+ -ReleaseYear (DATE)
+ -Bild (VARCHAR)
  
-Skådespelare
- -Namn
- -Födelsedatum
- -Info om personer
- -Filmer
- -Bild
+Personer
+ -ID (INT)
+ -f_namn (VARCHAR)
+ -e_namn (VARCHAR)
+ -Födelseår (DATE)
+ -Info (TEXT)
+ -Bild (VARCHAR)
+
+Roller
+ -ID (INT)
+ -Roll (INT)
  
 Genre ( Bestämda genres )
  -Namn
