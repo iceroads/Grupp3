@@ -6,35 +6,35 @@ config.php
 Filmer läggs upp av en redaktör. Redaktören står för rateing. 
 
 * **movies**
-  *ID (INT)
-  *Titel (VARCHAR)
-  *Producer (INT)
-  *Writer (INT)
-  *Rate (INT)
-  *Genre (VARCHAR)
-  *Trailer (VARCHAR)
-  *Info (TEXT)
-  *ReleaseYear (DATE)
-  *Bild (VARCHAR)
+  * ID (INT)
+  * Titel (VARCHAR)
+  * Producer (INT)
+  * Writer (INT)
+  * Rate (INT)
+  * Genre (VARCHAR)
+  * Trailer (VARCHAR)
+  * Info (TEXT)
+  * ReleaseYear (DATE)
+  * Bild (VARCHAR)
  
-**persons**
-*ID (INT)
-*f_namn (VARCHAR)
-*e_namn (VARCHAR)
-*Födelseår (DATE)
-*Info (TEXT)
-*Bild (VARCHAR)
+* **persons**
+  * ID (INT)
+  * f_namn (VARCHAR)
+  * e_namn (VARCHAR)
+  * Födelseår (DATE)
+  * Info (TEXT)
+  * Bild (VARCHAR)
 
-**roles**
-*ID (INT)
-*Roll (INT)
+* **roles**
+  * ID (INT)
+  * Roll (INT)
  
-**genres** ( Bestämda genres )
-*Namn
+* **genres** ( Bestämda genres )
+  * Namn
 
-**Sök**
-*Skådespelare
-*Filmtitel
-*Genre
+* **Sök**
+  * Skådespelare
+  * Filmtitel
+  * Genre
 
-Topplista ( baserat på rate ) -- startsida
+### Topplista ( baserat på rate ) -- startsida
