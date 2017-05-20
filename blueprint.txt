@@ -19,11 +19,12 @@ Root /
             -- class: Movie
                 --method: persons
                     -- belongsToMany ( **namepace** \Person)
+                --method: topplist // Show topplist on homepage
 
             -- class: Role
                 --method: Persons
                     -- belongsToMany ( **namespace** \Person)
-
+-- Mapp: resources
     -- Mapp: views
         -- Mapp: Home
             -- index.php
