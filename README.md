@@ -11,7 +11,7 @@ $config = [
         "host"  => "127.0.0.1",
         "username"  => "root",
         "password"  => "",
-        "database"  => "movie"
+        "name"  => "movie"
     ],
 ];
 
@@ -39,6 +39,8 @@ Om det inte fungerar efter du har lagt in .htaccess. Då är denna raden fel:
 RewriteBase /Grupp3/public
 ```
 
+# Glöm inte att skriva composer dumpautoload om du har pullat en uppdatering.
+# Glöm inte att skriva composer install om du har tagit hem git-repot igen.
 
 * **movies**
   * ID (INT)
