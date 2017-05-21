@@ -1,6 +1,6 @@
 <?php
 require "../app/bootstrap.php";
-require "../app/Controllers/Controller.php";
+require "../app/core/Controller.php";
 require "../app/core/Routes.php";
 
 
