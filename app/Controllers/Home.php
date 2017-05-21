@@ -2,13 +2,12 @@
 
 namespace App\Controllers;
 
+use App\Model as Model;
+
 class Home extends Controller {
 
 	public function index() {
-		echo 'home/index';
-	}
-
-	public function test() {
-		echo 'test';
+        $toplist = Model\Movie::take(10)->orderBy("rate", "DESC")->get();
+		include("../app/Views/home/index.php");
 	}
 }

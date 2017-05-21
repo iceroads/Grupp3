@@ -17,7 +17,7 @@ class Routes {
 		// we pass in to our controllers (ex. using views) which could consist of ex. $id
 		$url = $this->parseUrl();
 
-		print_r($url);
+		//print_r($url);
 		// check if controller exists, bc if it doesn't, 
 		// we don't wanna set the controller but instead use the default one
 		if(file_exists('../app/Controllers/' . $url[0] . '.php')) {
