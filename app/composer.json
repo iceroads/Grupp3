@@ -1,6 +1,5 @@
 {
     "require": {
-        "illuminate/routing": "^5.4",
         "illuminate/database": "^5.4"
     },
     "autoload": {
