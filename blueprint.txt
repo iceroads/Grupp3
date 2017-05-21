@@ -1,5 +1,5 @@
 
-Root / 
+Root / app
     -- Mapp: controllers
             -- class: Person
                 --method: show($id) // Show specific person
@@ -24,7 +24,7 @@ Root /
             -- class: Role
                 --method: Persons
                     -- belongsToMany ( **namespace** \Person)
--- Mapp: resources
+
     -- Mapp: views
         -- Mapp: Home
             -- index.php
@@ -36,10 +36,7 @@ Root /
             -- show.php
 
     -- Mapp: core
-            -- class: Controller   // Base Controller class
-                -- method: index   // Standard method. Must go for all.  Interface?
-            -- class: model        // Base Model class. Extends illumniate database
+            -- class: Routes   // Routeing class
 
--- index.php  // Load our app
--- bootstrap.php // init file to load autoload
--- composer.json // package container
+Root / public 
+    -- index.php  // Load our app
