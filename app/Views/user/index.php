@@ -1,5 +1,7 @@
 <?php get_header();?>
-<h1>Folk</h1>
+<h1>Movie Staff</h1>
+
+<h3>Stars/Writers/Directors/Producers</h3>
 
 <ol>
     <?php foreach($user as $user) : ?>
