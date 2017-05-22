@@ -1,7 +1,4 @@
-<!DOCTYPE html>
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
+<?php get_header(); ?>
     <title>All the movies</title>
 </head>
 <body>
@@ -11,6 +8,4 @@
                 <li><a href="http://<?php echo $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']); ?>/movie/show/<?php echo $movie->id; ?>"> <?php echo $movie->titel; ?></a> </li>
             <?php endforeach; ?>
         </ol>
-</body>
-</html>
-<pre>
+<?php get_footer(); ?>
