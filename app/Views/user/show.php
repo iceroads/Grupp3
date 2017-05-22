@@ -14,6 +14,10 @@
     <?php foreach($user->movies as $movie) : ?>
         <li><a href="http://<?php echo $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']); ?>/movie/show/<?php echo $movie->id; ?>"> <?php echo $movie->titel ?></a></li>
     <?php endforeach; ?>
+    <?php 
+    foreach($moviesByRoles as $movie) : ?>
+        <li><a href="http://<?php echo $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']); ?>/movie/show/<?php echo $movie->id; ?>"> <?php echo $movie->titel ?></a></li>
+    <?php endforeach; ?>
 </ol>
 
 <h3>Profession</h3>
