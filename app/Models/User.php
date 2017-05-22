@@ -6,6 +6,8 @@ use App\Core\Model;
 
 class User extends Model {
 
+	protected $fillable = [ "f_name", "e_name", "url", "birthdate", "info" ];
+
 	public function movies() {
 		return $this->belongsToMany(\App\Models\Movie::class);
 	}
