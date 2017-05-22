@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 20, 2017 at 01:47 PM
+-- Generation Time: May 22, 2017 at 07:39 AM
 -- Server version: 5.6.30
 -- PHP Version: 7.0.6
 
@@ -51,21 +51,21 @@ INSERT INTO `movies` (`id`, `titel`, `producer`, `writer`, `rate`, `trailer`, `r
 -- --------------------------------------------------------
 
 --
--- Table structure for table `movie_person`
+-- Table structure for table `movie_people`
 --
 
-CREATE TABLE IF NOT EXISTS `movie_person` (
+CREATE TABLE IF NOT EXISTS `movie_people` (
   `movie_id` int(11) NOT NULL,
-  `person_id` int(11) NOT NULL
+  `people_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `persons`
+-- Table structure for table `peoples`
 --
 
-CREATE TABLE IF NOT EXISTS `persons` (
+CREATE TABLE IF NOT EXISTS `peoples` (
   `id` int(11) NOT NULL,
   `f_namn` varchar(255) NOT NULL,
   `e_namn` varchar(255) NOT NULL,
@@ -77,10 +77,10 @@ CREATE TABLE IF NOT EXISTS `persons` (
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `persons`
+-- Dumping data for table `peoples`
 --
 
-INSERT INTO `persons` (`id`, `f_namn`, `e_namn`, `birthdate`, `info`, `bild`, `created_at`, `updated_at`) VALUES
+INSERT INTO `peoples` (`id`, `f_namn`, `e_namn`, `birthdate`, `info`, `bild`, `created_at`, `updated_at`) VALUES
 (1, 'Testa', 'Testsson', '0000-00-00', 'Test', 'none', '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
@@ -99,12 +99,12 @@ CREATE TABLE IF NOT EXISTS `roles` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `role_person`
+-- Table structure for table `role_people`
 --
 
-CREATE TABLE IF NOT EXISTS `role_person` (
+CREATE TABLE IF NOT EXISTS `role_people` (
   `role_id` int(11) NOT NULL,
-  `person_id` int(11) NOT NULL
+  `people_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
@@ -118,16 +118,16 @@ ALTER TABLE `movies`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `movie_person`
+-- Indexes for table `movie_people`
 --
-ALTER TABLE `movie_person`
+ALTER TABLE `movie_people`
   ADD KEY `film_id` (`movie_id`),
-  ADD KEY `person_id` (`person_id`);
+  ADD KEY `person_id` (`people_id`);
 
 --
--- Indexes for table `persons`
+-- Indexes for table `peoples`
 --
-ALTER TABLE `persons`
+ALTER TABLE `peoples`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -137,11 +137,11 @@ ALTER TABLE `roles`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `role_person`
+-- Indexes for table `role_people`
 --
-ALTER TABLE `role_person`
+ALTER TABLE `role_people`
   ADD KEY `roll_id` (`role_id`),
-  ADD KEY `person_id` (`person_id`);
+  ADD KEY `person_id` (`people_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -153,9 +153,9 @@ ALTER TABLE `role_person`
 ALTER TABLE `movies`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `persons`
+-- AUTO_INCREMENT for table `peoples`
 --
-ALTER TABLE `persons`
+ALTER TABLE `peoples`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `roles`
@@ -167,18 +167,18 @@ ALTER TABLE `roles`
 --
 
 --
--- Constraints for table `movie_person`
+-- Constraints for table `movie_people`
 --
-ALTER TABLE `movie_person`
-  ADD CONSTRAINT `movie_person_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `movie_person_ibfk_2` FOREIGN KEY (`person_id`) REFERENCES `persons` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `movie_people`
+  ADD CONSTRAINT `movie_people_ibfk_1` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `movie_people_ibfk_2` FOREIGN KEY (`people_id`) REFERENCES `peoples` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Constraints for table `role_person`
+-- Constraints for table `role_people`
 --
-ALTER TABLE `role_person`
-  ADD CONSTRAINT `role_person_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
-  ADD CONSTRAINT `role_person_ibfk_2` FOREIGN KEY (`person_id`) REFERENCES `persons` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE `role_people`
+  ADD CONSTRAINT `role_people_ibfk_1` FOREIGN KEY (`role_id`) REFERENCES `roles` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `role_people_ibfk_2` FOREIGN KEY (`people_id`) REFERENCES `peoples` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

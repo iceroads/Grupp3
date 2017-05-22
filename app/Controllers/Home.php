@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-use App\Model as Model;
+use App\Models as Model;
 
 class Home extends Controller {
 
