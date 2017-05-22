@@ -2,6 +2,7 @@
 
 require "vendor/autoload.php";
 require "config.php";
+require "core/templates.php";
 
 use Illuminate\Database\Capsule\Manager as Capsule;
 
