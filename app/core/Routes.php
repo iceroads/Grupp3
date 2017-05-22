@@ -18,13 +18,14 @@ class Routes {
 		$url = $this->parseUrl();
 
 		//print_r($url);
+
 		// check if controller exists, bc if it doesn't, 
 		// we don't wanna set the controller but instead use the default one
 		if(file_exists('../app/Controllers/' . $url[0] . '.php')) {
 			// if the controller exists as a file, we wanna set it to url[0] (=name of the controller that we've called)
 			// so that it essentially will replace the default controller
 			$this->controller = $url[0];
-			// then we unset it to remove it from the array
+			// then we unset it to remove it from the array so that it doesn't get send to the params
 			unset($url[0]);
 			// OBS! if the controller doens't exist as a file, the code block within this if-statement won't run
 			// and only the default controller (home) will show
