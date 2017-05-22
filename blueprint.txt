@@ -1,8 +1,8 @@
 
 Root / app
     -- Mapp: controllers
-            -- class: People
-                --method: show($id) // Show specific people
+            -- class: User
+                --method: show($id) // Show specific user
 
             -- class: Movie
                 --method: show($id) // Show specific movie
@@ -10,19 +10,19 @@ Root / app
             -- class: Home  // Homepage
 
     -- Mapp: models
-            -- class: People
+            -- class: User
                 --method: movies
-                    -- belongsToMany ( **namespace** \Movie)
+                    -- belongsToMany ( App\Models\Movie)
                 --method: roles
-                    --belongsToMany ( **namespace** \Role)
+                    --belongsToMany ( App\Models\Role)
 
             -- class: Movie
-                --method: peoples
-                    -- belongsToMany ( App\Models\People)
+                --method: users
+                    -- belongsToMany ( App\Models\User)
 
             -- class: Role
-                --method: peoples
-                    -- belongsToMany ( App\Models\People)
+                --method: users
+                    -- belongsToMany ( App\Models\User)
 
     -- Mapp: views
         -- Mapp: Home
