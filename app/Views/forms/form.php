@@ -19,16 +19,16 @@
 
   <label for="info">Biografi:</label><br>
   <textarea name="info" id="info" rows="10" cols="70"></textarea><br>
-  <input type="submit" value="Spara">
+  <input type="submit" name="submit" value="Spara">
 </form>
 <div>
-    <div class="container jumbotron alert alert-danger">
       <?php if (!empty($errors)){
+        echo '<div class="container jumbotron alert alert-danger">';
         echo "Kunde inte skapa skådespelare!<br>Du har inte valt;<br>";
         $error = implode(", ", $errors);
         echo $error;
+        echo '</div>';
       } ?>
-    </div>
   </div>
 
 <?php get_footer(); ?>

@@ -28,68 +28,70 @@ class Film extends Controller implements ControllerInterface {
 
 		$input = [];
 		$errors = [];
-		if (isset($_POST['titel'])) {
-			$input['titel'] = $_POST['titel'];
-		} else {
-			$errors[] = "titel";
-		}
+		if(isset($_POST["submit"])) {
+			if (isset($_POST['titel'])) {
+				$input['titel'] = $_POST['titel'];
+			} else {
+				$errors[] = "titel";
+			}
 
-		if (isset($_POST['producer'])) {
-			$input['producer'] = $_POST['producer'];
-		} else {
-			$errors[] = "producer";
-		}
+			if (!empty($_POST['producer'])) {
+				$input['producer'] = $_POST['producer'];
+			} else {
+				$errors[] = "producer";
+			}
 
-		if (isset($_POST['writer'])) {
-			$input['writer'] = $_POST['writer'];
-		} else {
-			$errors[] = "writer";
-		}
+			if (!empty($_POST['writer'])) {
+				$input['writer'] = $_POST['writer'];
+			} else {
+				$errors[] = "writer";
+			}
 
-		if (isset($_POST['rates'])) {
-			$input['rate'] = $_POST['rates'];
-		} else {
-			$errors[] = "rate";
-		}
+			if (!empty($_POST['rates'])) {
+				$input['rate'] = $_POST['rates'];
+			} else {
+				$errors[] = "rate";
+			}
 
-		if (isset($_POST['trailer'])) {
-			$input['trailer'] = $_POST['trailer'];
-		} else {
-			$errors[] = "trailer";
-		}
+			if (!empty($_POST['trailer'])) {
+				$input['trailer'] = $_POST['trailer'];
+			} else {
+				$errors[] = "trailer";
+			}
 
-		if (isset($_POST['release_year'])) {
-			$input['release_year'] = $_POST['release_year'];
-		} else {
-			$errors[] = "release year";
-		}
+			if (!empty($_POST['release_year'])) {
+				$input['release_year'] = $_POST['release_year'];
+			} else {
+				$errors[] = "release year";
+			}
 
-		if (isset($_POST['info'])) {
-			$input['info'] = $_POST['info'];
-		}
+			if (isset($_POST['info'])) {
+				$input['info'] = $_POST['info'];
+			}
 
-		if (isset($_POST['bild'])) {
-			$input['bild'] = htmlentities($_POST['bild']);
-		}
+			if (isset($_POST['bild'])) {
+				$input['bild'] = htmlentities($_POST['bild']);
+			}
 
-		if(isset($_POST['genres'])){
-			$input['genre'] = $_POST['genres'];
-		} else {
-			$errors[] = "genre";
-		}
+			if(!empty($_POST['genres'])){
+				$input['genre'] = $_POST['genres'];
+			} else {
+				$errors[] = "genre";
+			}
 
-		if(isset($_POST["star"]) && is_array($_POST["star"])) {
-			$stars = $_POST["star"];
-		} else {
-			$errors[] = "stars";
-		}
+			if(!empty($_POST["star"]) && is_array($_POST["star"])) {
+				$stars = $_POST["star"];
+			} else {
+				$errors[] = "stars";
+			}
 
-		// kolla om användaren finns och om inte så skapa den
- 		if (\App\Models\Movie::where($input)->exists() === false && count($errors) == 0) {
-			$new_movie = \App\Models\Movie::create($input);
-			$new_movie->users()->attach($stars);
-			echo "Sparad!<br>";
- 		}
+			// kolla om användaren finns och om inte så skapa den
+	 		if (\App\Models\Movie::where($input)->exists() === false && count($errors) == 0) {
+				$new_movie = \App\Models\Movie::create($input);
+				$new_movie->users()->attach($stars);
+				echo "Sparad!<br>";
+	 		}
+		}
 
  		include("../app/Views/forms/film.php");
  	}

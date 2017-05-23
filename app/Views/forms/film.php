@@ -69,13 +69,13 @@
   <input type="submit" name="submit" value="Spara">
 </form>
   <div>
-    <div class="container jumbotron alert alert-danger">
       <?php if (!empty($errors)){
+        echo '<div class="container jumbotron alert alert-danger">';
         echo "Kunde inte skapa film!<br>Du har inte valt;<br>";
         $error = implode(", ", $errors);
         echo $error;
+        echo '</div>';
       } ?>
-    </div>
   </div>
 </div>
 
