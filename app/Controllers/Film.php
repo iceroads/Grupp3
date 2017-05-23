@@ -7,6 +7,22 @@ use App\Models as Model;
 class Film extends Controller {
 
 	public function index() {
+
+		// ladda in lista på alla Producer
+		// hämta user som har rollen med id 4 och spara i variabeln producers
+		$producers = Model\User::whereHas(
+			'roles', function($query) {
+				$query->where('id', 4);
+			})
+			->get();
+
+		// ladda in lista på alla Writers
+		$writers = Model\User::whereHas(
+			'roles', function($query) {
+				$query->where('id', 2);
+			})
+			->get();
+
 		include("../app/Views/forms/film.php");
 
 		$input = [];
@@ -17,22 +33,22 @@ class Film extends Controller {
 			$errors[] = "Du har inte skrivit in titel!";
 		}
 
-		if (isset($_POST['producer'])) {
+		if (isset($_POST['producers'])) {
 			$input['producer'] = $_POST['producer'];
 		} else {
-			$errors[] = "Du har inte skrivit in producer!";
+			$errors[] = "Du har inte valt producer!";
 		}
 
-		if (isset($_POST['writer'])) {
+		if (isset($_POST['writers'])) {
 			$input['writer'] = $_POST['writer'];
 		} else {
-			$errors[] = "Du har inte skrivit in writer!";
+			$errors[] = "Du har inte valt writer!";
 		}
 
-		if (isset($_POST['rate'])) {
-			$input['rate'] = $_POST['rate'];
+		if (isset($_POST['rates'])) {
+			$input['rate'] = $_POST['rates'];
 		} else {
-			$errors[] = "Du har inte skrivit in rate!";
+			$errors[] = "Du har inte valt rate!";
 		}
 
 		if (isset($_POST['trailer'])) {
@@ -55,10 +71,10 @@ class Film extends Controller {
 			$input['bild'] = $_POST['bild'];
 		}
 
-		if (isset($_POST['genre'])) {
-			$input['genre'] = $_POST['genre'];
+		if(isset($_POST['genres'])){
+			$input['genre'] = $_POST['genres'];
 		} else {
-			$errors[] = "Du har inte skrivit in genre!";
+			$errors[] = "Du har inte valt genre!";
 		}
 
 		// kolla om användaren finns och om inte så skapa den

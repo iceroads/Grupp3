@@ -7,18 +7,21 @@ use App\Models as Model;
 class Form extends Controller {
 
 	public function index() {
+
+		$roles = \App\Models\Role::get();
+
 		include("../app/Views/forms/form.php");
 
 		$input = [];
 		$errors = [];
-		if (isset($_POST['f_name'])) {
-			$input['f_name'] = $_POST['f_name'];
+		if (isset($_POST['f_namn'])) {
+			$input['f_namn'] = $_POST['f_namn'];
 		} else {
 			$errors[] = "Du har inte skrivit in förnamn!";
 		}
 
-		if (isset($_POST['e_name'])) {
-			$input['e_name'] = $_POST['e_name'];
+		if (isset($_POST['e_namn'])) {
+			$input['e_namn'] = $_POST['e_namn'];
 		} else {
 			$errors[] = "Du har inte skrivit in efternamn!";
 		}
@@ -37,10 +40,16 @@ class Form extends Controller {
 			$input['bild'] = $_POST['bild'];
 		}
 
+			
 		// kolla om användaren finns och om inte så skapa den
  		if (\App\Models\User::where($input)->exists() === false && count($errors) == 0) {
 			$new_user = \App\Models\User::create($input);
 			echo "Sparad!<br>";
+			if (isset($_POST['role'])) {
+				foreach ($_POST['role'] as $profession) {
+					$new_user->roles()->attach($profession);
+				}
+			}
  		} else {
  			echo "Kunde inte skapa skådespelare!<br/>";
  			// sök igenom errors array efter felmedelanden och skriv ut dem
