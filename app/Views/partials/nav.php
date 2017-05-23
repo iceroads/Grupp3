@@ -6,8 +6,8 @@
 				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/toplist">Toplist</a>
 				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/user">Movie Staff</a>
 				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/movie">Movies</a>
-				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/form">+ skådespelare</a>
-				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/film">+ film</a>
+				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/form">+ Movie Staff</a>
+				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/film">+ Movie</a>
 			</div>
 		</div>
 	</div><!-- /.container -->

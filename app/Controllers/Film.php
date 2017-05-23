@@ -10,6 +10,14 @@ class Film extends Controller implements ControllerInterface {
 
 	public function index() {
 
+		// ladda in lista på alla star
+		// hämta user som har rollen med id 1 och spara i variabeln star
+		$stars = Model\User::whereHas(
+			'roles', function($query) {
+				$query->where('id', 1);
+			})
+			->get();
+
 		// ladda in lista på alla Producer
 		// hämta user som har rollen med id 4 och spara i variabeln producers
 		$producers = Model\User::whereHas(
@@ -86,5 +94,16 @@ class Film extends Controller implements ControllerInterface {
 
  		include("../app/Views/forms/film.php");
  	}
+ 	public function userToJson() {
+        $users = Model\User::get();
+            $JsonData = [];
+        foreach ($users as $user) {
+            $uservalue["value"]= $user->name();
+            $uservalue["data"]= $user->id;
+            array_push($JsonData, $uservalue);
+        }
+        header('Content-Type: application/json');
+        echo json_encode($JsonData);
+    }
 }
 ?>

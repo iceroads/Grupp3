@@ -1,14 +1,7 @@
-<?php get_header(); ?>
-
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <title>Lägg till skådespelare</title>
-</head>
-<body>
+<?php get_header("Add Movie Staff"); ?>
 
 <form method="POST">
-  <h1>Lägg till skådespelare</h1><br>
+  <h1>Add movie staff</h1><br>
   <label for="f_namn">Förnamn:</label>
   <input type="text" name="f_namn" id="f_namn"><br>
   <label for="e_namn">Efternamn:</label>

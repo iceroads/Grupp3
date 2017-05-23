@@ -19,4 +19,6 @@ class User extends Controller implements ControllerInterface {
     	->orwhere('writer', $user->id)->get();
     	include("../app/Views/user/show.php");
 	}
+
+    
 }

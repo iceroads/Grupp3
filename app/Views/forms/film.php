@@ -1,16 +1,13 @@
-<?php get_header(); ?>
-     
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <title>Lägg till film</title>
-</head>
-<body>
+<?php get_header("Add Movie"); ?>
 
 <form method="POST">
-  <h1>Lägg till film</h1><br>
+  <h1>Add movie</h1><br>
   <label for="titel">Titel:</label>
   <input type="text" name="titel" id="titel"><br>
+
+  <label for="star">Star:</label>
+  <input type="text" name="star" id="star"><br>
+
 
   <label for="producer">Producer:</label>
   <select name="producer" id="producer">
