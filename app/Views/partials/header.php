@@ -12,6 +12,9 @@
 	<link rel="stylesheet" href="http://<?php echo BASE_PATH; ?>/assets/css/style.css">
 	<link rel="stylesheet" href="http://<?php echo BASE_PATH; ?>/assets/css/easy-autocomplete.min.css">
 	<link rel="stylesheet" href="http://<?php echo BASE_PATH; ?>/assets/css/easy-autocomplete.themes.min.css">
+	<script>
+		var ajaxBase = "<?php echo BASE_PATH; ?>";
+	</script>
 </head>
 
 <body>

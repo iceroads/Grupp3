@@ -1,6 +1,6 @@
 var options = {
 
-  url: "http://127.0.0.1/skola/grupparbete/movie/public/film/userToJson",
+  url: "http://"+ajaxBase+"/film/userToJson",
 
   getValue: "name",
 
@@ -8,9 +8,7 @@ var options = {
     match: {
       enabled: true
     }
-  },
-
-  theme: "square"
+  }
 };
 
 $(".starInput").easyAutocomplete(options);
