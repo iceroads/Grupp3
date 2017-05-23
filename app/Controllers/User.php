@@ -7,7 +7,7 @@ use App\Models as Model;
 class User extends Controller {
 
 	public function index() {
-    	$user = Model\User::get();
+    	$users = Model\User::get();
     	include("../app/Views/user/index.php");
 	}
 
