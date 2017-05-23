@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header($user->f_namn . " ". $user->e_namn); ?>
 <h1><?php echo $user->f_namn . " ". $user->e_namn ?></h1>
 
 <img src="<?php echo $user->bild ?>">

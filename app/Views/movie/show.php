@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php get_header($movie->titel); ?>
         <h1> Movies </h1>
      <h3><?php echo $movie->titel; ?></h3>
      <br/>
@@ -9,9 +9,10 @@
      <img src="<?php echo $movie->bild; ?>">
      <br/>
 
-     <h4> Producer: <?php echo $users->find($movie->producer)->f_namn." ".$users->find($movie->producer)->e_namn; ?></h4>
+     <h4> Producer: <a href="http://<?php echo BASE_PATH;?>/user/show/<?php echo $movie->producer; ?>"><?php echo $users->find($movie->producer)->f_namn." ".$users->find($movie->producer)->e_namn; ?></a></h4>
      <br/>
-     <h4> Writer: <?php echo $users->find($movie->writer)->f_namn." ".$users->find($movie->writer)->e_namn; ?></h4>
+     <h4> Writer: <a href="http://<?php echo BASE_PATH;?>/user/show/<?php echo $movie->writer; ?>">
+    <?php echo $users->find($movie->writer)->f_namn." ".$users->find($movie->writer)->e_namn; ?></a></h4>
      <br/>
      <p><?php echo $movie->info; ?></p>
      <br/>

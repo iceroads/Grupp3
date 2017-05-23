@@ -13,11 +13,9 @@ class Movie extends Controller {
 	public function show($id){
 		$movie = Model\Movie::find($id);
 		$users = new Model\User;
+		
 		include("../app/Views/movie/show.php");
 
 	}
-	public function users()
-    {
-        return $this->belongsToMany('App\Models\User');
-    }
+	
 }

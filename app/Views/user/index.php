@@ -1,4 +1,4 @@
-<?php get_header();?>
+<?php get_header('Stars/Writers/Directors/Producers');?>
 <h1>Movie Staff</h1>
 
 <h3>Stars/Writers/Directors/Producers</h3>

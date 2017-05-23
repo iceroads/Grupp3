@@ -3,7 +3,7 @@
 require "vendor/autoload.php";
 require "config.php";
 require "core/templates.php";
-
+define ('BASE_PATH', $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']));
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;

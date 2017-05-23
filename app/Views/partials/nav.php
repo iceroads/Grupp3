@@ -1,13 +1,13 @@
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
 	<div class="container">
-		<a class="navbar-brand" href="#">Movie</a>
+		<a class="navbar-brand" href="http://<?php echo BASE_PATH ?>">Movie</a>
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav">
-				<a class="nav-item nav-link" href="http://<?php echo $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']); ?>/toplist">Toplist</a>
-				<a class="nav-item nav-link" href="http://<?php echo $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']); ?>/user">Movie Staff</a>
-				<a class="nav-item nav-link" href="http://<?php echo $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']); ?>/movie">Movies</a>
-				<a class="nav-item nav-link" href="http://<?php echo $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']); ?>/form">+ skådespelare</a>
-				<a class="nav-item nav-link" href="http://<?php echo $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']); ?>/film">+ film</a>
+				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/toplist">Toplist</a>
+				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/user">Movie Staff</a>
+				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/movie">Movies</a>
+				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/form">+ skådespelare</a>
+				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/film">+ film</a>
 			</div>
 		</div>
 	</div><!-- /.container -->
