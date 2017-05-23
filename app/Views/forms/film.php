@@ -6,7 +6,7 @@
   <input type="text" name="titel" id="titel"><br>
 
   <label for="star">Star:</label>
-  <input type="text" name="star" id="star"><br>
+  <input type="text" name="star[]" class="starInput"><button class="btn addStarInput">Lägg till</button><br>
 
 
   <label for="producer">Producer:</label>

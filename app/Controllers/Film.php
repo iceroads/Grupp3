@@ -85,7 +85,10 @@ class Film extends Controller implements ControllerInterface {
 		} else {
 			$errors[] = "genre";
 		}
-
+		if(isset($_POST["genres"])) {
+			var_dump($_POST);
+			die();
+		}
 		// kolla om användaren finns och om inte så skapa den
  		if (\App\Models\Movie::where($input)->exists() === false && count($errors) == 0) {
 			$new_movie = \App\Models\Movie::create($input);
@@ -98,8 +101,8 @@ class Film extends Controller implements ControllerInterface {
         $users = Model\User::get();
             $JsonData = [];
         foreach ($users as $user) {
-            $uservalue["value"]= $user->name();
-            $uservalue["data"]= $user->id;
+            $uservalue["name"]= $user->name();
+            $uservalue["code"]= $user->id;
             array_push($JsonData, $uservalue);
         }
         header('Content-Type: application/json');

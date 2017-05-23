@@ -10,6 +10,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
 
 	<link rel="stylesheet" href="http://<?php echo BASE_PATH; ?>/assets/css/style.css">
+	<link rel="stylesheet" href="http://<?php echo BASE_PATH; ?>/assets/css/easy-autocomplete.min.css">
+	<link rel="stylesheet" href="http://<?php echo BASE_PATH; ?>/assets/css/easy-autocomplete.themes.min.css">
 </head>
 
 <body>
