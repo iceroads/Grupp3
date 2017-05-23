@@ -10,14 +10,6 @@ class Film extends Controller implements ControllerInterface {
 
 	public function index() {
 
-		// ladda in lista på alla star
-		// hämta user som har rollen med id 1 och spara i variabeln star
-		$stars = Model\User::whereHas(
-			'roles', function($query) {
-				$query->where('id', 1);
-			})
-			->get();
-
 		// ladda in lista på alla Producer
 		// hämta user som har rollen med id 4 och spara i variabeln producers
 		$producers = Model\User::whereHas(
@@ -97,16 +89,49 @@ class Film extends Controller implements ControllerInterface {
 
  		include("../app/Views/forms/film.php");
  	}
- 	public function userToJson() {
-        $users = Model\User::get();
-            $JsonData = [];
-        foreach ($users as $user) {
-            $uservalue["name"]= $user->name();
-            $uservalue["code"]= $user->id;
-            array_push($JsonData, $uservalue);
-        }
-        header('Content-Type: application/json');
-        echo json_encode($JsonData);
-    }
+
+ 	public function edit($id) {
+
+ 		$movie = Model\Movie::find($id);
+ 		// ladda in lista på alla Producer
+		// hämta user som har rollen med id 4 och spara i variabeln producers
+		$producers = Model\User::whereHas(
+			'roles', function($query) {
+				$query->where('id', 4);
+			})
+			->get();
+
+		// ladda in lista på alla Writers
+		// hämta user som har rollen med id 2 och spara i variabeln writers
+		$writers = Model\User::whereHas(
+			'roles', function($query) {
+				$query->where('id', 2);
+			})
+			->get();
+
+ 		if(isset($_POST["submit"])) {
+ 			$expectet_posts = ["titel","star","producer","writer","rate","trailer","release_year","bild","genre","info"];
+ 			$required_posts = ["titel","star","producer","writer","rate","trailer","release_year","genre"];
+ 			foreach($expectet_posts as $post) {
+ 				if(in_array($post, $required_posts) && empty($_POST[$post])) {
+ 					$errors[] = $post;
+ 				} else {
+ 					$errors = [];
+ 					$input[$post] = $_POST[$post];
+ 				}
+ 			}
+
+ 			if($movie->exists() === true && count($errors) == 0) {
+ 				$movie->update($input);
+ 				$movie->users()->sync($_POST["star"]);
+ 			}
+ 		}
+
+		
+ 		if($movie) {
+ 			include("../app/Views/forms/movieEdit.php");
+ 		}
+ 	}
+
 }
 ?>
