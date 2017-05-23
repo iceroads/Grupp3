@@ -1,0 +1,10 @@
+.bg-faded {
+    background-color: #ddd;
+}
+
+input#titel, #producer, #writer, #rate, #trailer, #release_year, #url, #genre, #info, #f_name, #e_name{
+    background-color: #ddd;
+}
+input#Spara{
+	background-color:#ccc;
+
