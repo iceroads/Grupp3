@@ -5,9 +5,28 @@
 input#titel, #producer, #writer, #rate, #trailer, #release_year, #url, #genre, #info, #f_name, #e_name{
     background-color: #ebebe0;
 }
-input#Spara{
-	background-color:#ccc;
 
 .navbar-light .navbar-nav .nav-link{
 	color: black;
+}
+input[type="submit"] {
+    padding: 15px 25px;
+    font-size: 24px;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    color: #fff;
+    background-color: #ccc;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 9px #999;
+}
+
+input[type="submit"]:hover {
+	background-color: #80ff80;
+}
+
+input[type="submit"]:active {
+  background-color: #black;
+  
 }
