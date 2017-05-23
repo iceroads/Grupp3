@@ -13,7 +13,8 @@ class User extends Controller {
 
 	public function show($id) {
     	$user = Model\User::find($id);
-    	$moviesByRoles = \App\Models\Movie::where('producer', $user->id)->where('writer', $user->id)->get();
+    	$moviesByRoles = \App\Models\Movie::where('producer', $user->id)
+    	->orwhere('writer', $user->id)->get();
     	include("../app/Views/user/show.php");
 	}
 }
