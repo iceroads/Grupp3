@@ -5,15 +5,18 @@
   <label for="titel">Titel:</label>
   <input type="text" name="titel" id="titel"><br>
 
-  <label for="star">Star:</label>
-  <input type="text" name="star[]" class="starInput"><button class="btn addStarInput">Lägg till</button><br>
+<label for="star">Stars:</label>
+<input type="text" id="starInput" name="autocomplete" class="starInput" placeholder="Actor">
+  <button class="btn addStar">Lägg till</button><br>
+<ul class="starList">
+</ul>
 
 
   <label for="producer">Producer:</label>
   <select name="producer" id="producer">
     <option value="0">--   Välj  --</option>
     <?php foreach ($producers as $producer) : ?>
-      <option id="<?php echo $producer->id; ?>"><?php echo $producer->name(); ?></option>
+      <option value="<?php echo $producer->id; ?>"><?php echo $producer->name(); ?></option>
     <?php endforeach; ?>
   </select><br>
 
@@ -21,7 +24,7 @@
   <select name="writer" id="writer">
     <option value="0">--   Välj  --</option>
     <?php foreach ($writers as $writer) : ?>
-      <option id="<?php echo $writer->id; ?>"><?php echo $writer->name(); ?></option>
+      <option value="<?php echo $writer->id; ?>"><?php echo $writer->name(); ?></option>
     <?php endforeach; ?>
   </select><br>
 

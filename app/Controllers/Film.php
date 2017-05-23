@@ -34,13 +34,13 @@ class Film extends Controller implements ControllerInterface {
 			$errors[] = "titel";
 		}
 
-		if (isset($_POST['producers'])) {
+		if (isset($_POST['producer'])) {
 			$input['producer'] = $_POST['producer'];
 		} else {
 			$errors[] = "producer";
 		}
 
-		if (isset($_POST['writers'])) {
+		if (isset($_POST['writer'])) {
 			$input['writer'] = $_POST['writer'];
 		} else {
 			$errors[] = "writer";
@@ -69,7 +69,7 @@ class Film extends Controller implements ControllerInterface {
 		}
 
 		if (isset($_POST['bild'])) {
-			$input['bild'] = $_POST['bild'];
+			$input['bild'] = htmlentities($_POST['bild']);
 		}
 
 		if(isset($_POST['genres'])){
@@ -77,13 +77,17 @@ class Film extends Controller implements ControllerInterface {
 		} else {
 			$errors[] = "genre";
 		}
-		if(isset($_POST["genres"])) {
-			var_dump($_POST);
-			die();
+
+		if(isset($_POST["star"]) && is_array($_POST["star"])) {
+			$stars = $_POST["star"];
+		} else {
+			$errors[] = "stars";
 		}
+
 		// kolla om användaren finns och om inte så skapa den
  		if (\App\Models\Movie::where($input)->exists() === false && count($errors) == 0) {
 			$new_movie = \App\Models\Movie::create($input);
+			$new_movie->users()->attach($stars);
 			echo "Sparad!<br>";
  		}
 

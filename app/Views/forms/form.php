@@ -9,7 +9,7 @@
   <label for="birthdate">Födelsedag:</label>
   <input type="date" name="birthdate" id="birthdate"><br>
   <label for="url">Url till bild:</label>
-  <input type="url" name="url" id="url"><br>
+  <input type="url" name="bild" id="url"><br>
 
   <label for="role">Välj Roller:</label><ul>
   <?php foreach ($roles as $role) :?>
