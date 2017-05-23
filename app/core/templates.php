@@ -1,5 +1,5 @@
 <?php
-function get_header($page_title = "Awsome Movies") {
+function get_header($page_title = "Awesome Movies") {
 	include "../app/Views/partials/header.php";
 }
 function get_footer() {

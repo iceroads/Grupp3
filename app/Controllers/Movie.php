@@ -4,7 +4,9 @@ namespace App\Controllers;
 
 use App\Models as Model;
 
-class Movie extends Controller {
+use App\Interfaces\ControllerInterface;
+
+class Movie extends Controller implements ControllerInterface {
 
 	public function index() {
         $movies = Model\Movie::orderBy("titel", "ASC")->get();

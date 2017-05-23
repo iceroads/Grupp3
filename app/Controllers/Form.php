@@ -4,7 +4,9 @@ namespace App\Controllers;
 
 use App\Models as Model;
 
-class Form extends Controller {
+use App\Interfaces\ControllerInterface;
+
+class Form extends Controller implements ControllerInterface {
 
 	public function index() {
 

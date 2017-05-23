@@ -4,7 +4,9 @@ namespace App\Controllers;
 
 use App\Models as Model;
 
-class Home extends Controller {
+use App\Interfaces\ControllerInterface;
+
+class Home extends Controller implements ControllerInterface {
 
 	public function index() {
         $toplist = Model\Movie::take(10)->orderBy("rate", "DESC")->get();

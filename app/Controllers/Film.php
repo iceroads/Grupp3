@@ -4,7 +4,9 @@ namespace App\Controllers;
 
 use App\Models as Model;
 
-class Film extends Controller {
+use App\Interfaces\ControllerInterface;
+
+class Film extends Controller implements ControllerInterface {
 
 	public function index() {
 
