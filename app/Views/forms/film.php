@@ -68,10 +68,16 @@
 
   <input type="submit" name="submit" value="Spara">
 </form>
-  
-</body>
-</html>
-<pre>
+  <div>
+    <div class="container jumbotron alert alert-danger">
+      <?php if (!empty($errors)){
+        echo "Kunde inte skapa film!<br>Du har inte valt;<br>";
+        $error = implode(", ", $errors);
+        echo $error;
+      } ?>
+    </div>
+  </div>
+</div>
 
 <?php get_footer(); ?>
   

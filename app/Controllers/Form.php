@@ -10,8 +10,6 @@ class Form extends Controller {
 
 		$roles = \App\Models\Role::get();
 
-		include("../app/Views/forms/form.php");
-
 		$input = [];
 		$errors = [];
 		if (isset($_POST['f_namn'])) {
@@ -50,15 +48,10 @@ class Form extends Controller {
 					$new_user->roles()->attach($profession);
 				}
 			}
- 		} else {
- 			echo "<div class=container>Kunde inte skapa skådespelare!<br/>Du har inte valt; </div>";
- 			// sök igenom errors array efter felmedelanden och skriv ut dem
- 			foreach ($errors as $error) {
- 				echo "<div class=container><div class=list>" . $error . "</div></div>";
- 			}
+ 		
  		}
-
+ 		include("../app/Views/forms/form.php");
  
- 			}
-		}
+	}
+}
 ?>

@@ -24,44 +24,42 @@ class Film extends Controller {
 			})
 			->get();
 
-		include("../app/Views/forms/film.php");
-
 		$input = [];
 		$errors = [];
 		if (isset($_POST['titel'])) {
 			$input['titel'] = $_POST['titel'];
 		} else {
-			$errors[] = "titel ";
+			$errors[] = "titel";
 		}
 
 		if (isset($_POST['producers'])) {
 			$input['producer'] = $_POST['producer'];
 		} else {
-			$errors[] = "producer ";
+			$errors[] = "producer";
 		}
 
 		if (isset($_POST['writers'])) {
 			$input['writer'] = $_POST['writer'];
 		} else {
-			$errors[] = "writer ";
+			$errors[] = "writer";
 		}
 
 		if (isset($_POST['rates'])) {
 			$input['rate'] = $_POST['rates'];
 		} else {
-			$errors[] = "rate ";
+			$errors[] = "rate";
 		}
 
 		if (isset($_POST['trailer'])) {
 			$input['trailer'] = $_POST['trailer'];
 		} else {
-			$errors[] = "trailer ";
+			$errors[] = "trailer";
 		}
 
 		if (isset($_POST['release_year'])) {
 			$input['release_year'] = $_POST['release_year'];
 		} else {
-			$errors[] = "release year ";
+			$errors[] = "release year";
 		}
 
 		if (isset($_POST['info'])) {
@@ -75,22 +73,16 @@ class Film extends Controller {
 		if(isset($_POST['genres'])){
 			$input['genre'] = $_POST['genres'];
 		} else {
-			$errors[] = "genre ";
+			$errors[] = "genre";
 		}
 
 		// kolla om användaren finns och om inte så skapa den
  		if (\App\Models\Movie::where($input)->exists() === false && count($errors) == 0) {
 			$new_movie = \App\Models\Movie::create($input);
 			echo "Sparad!<br>";
- 		} else {
- 			echo "<div class=container>Kunde inte skapa film!<br>Du har inte valt; </div>";
- 			// sök igenom errors array efter felmedelanden och skriv ut dem
- 			foreach ($errors as $error) {
- 				echo "<div class=container><div class=list>" . $error . "</div></div>";
- 			}
  		}
 
- 
- 			}
-		}
+ 		include("../app/Views/forms/film.php");
+ 	}
+}
 ?>
