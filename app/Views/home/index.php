@@ -8,9 +8,9 @@
        <div class="toplist_box mb-3 border-1">
             <div class="alert alert-success">
                 <span class="float-left h2">#<?php echo $i; ?></span>
-                <h4 class="text-center"><a class="h4" href="http://<?php echo BASE_PATH; ?>/movie/show/<?php echo $movie->id; ?>"><?php echo $movie->titel; ?></a></h4>
+                <h4 class="text-center"><a class="h4" href="http://<?php echo $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']); ?>/movie/show/<?php echo $movie->id; ?>"><?php echo $movie->titel; ?></a></h4>
             </div>
-            <a href="http://<?php echo BASE_PATH ?>/movie/show/<?php echo $movie->id; ?>">
+            <a href="http://<?php echo $_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']); ?>/movie/show/<?php echo $movie->id; ?>">
                 <img class="float-left mr-2" src="<?php echo $movie->bild; ?>">
             </a>
             <p><?php echo $movie->info; ?>
