@@ -38,6 +38,7 @@ class Routes {
 
 		// we create a new instance (object) of $this->controller
 		// ex. Home controller will become a Home object 
+		
 		$this->controller = new $controller;
 		// var_dump($this->controller);
 

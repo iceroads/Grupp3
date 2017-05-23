@@ -1,6 +1,6 @@
 <nav class="navbar navbar-toggleable-md navbar-light bg-faded">
 	<div class="container">
-		<a class="navbar-brand" href="http://<?php echo BASE_PATH ?>">Movie</a>
+		<a class="navbar-brand" href="http://<?php echo BASE_PATH ?>">IMDB</a>
 		<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 			<div class="navbar-nav">
 				<a class="nav-item nav-link" href="http://<?php echo BASE_PATH; ?>/toplist">Toplist</a>

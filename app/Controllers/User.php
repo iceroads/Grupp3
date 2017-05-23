@@ -4,7 +4,9 @@ namespace App\Controllers;
 
 use App\Models as Model;
 
-class User extends Controller {
+use App\Interfaces\ControllerInterface;
+
+class User extends Controller implements ControllerInterface {
 
 	public function index() {
     	$users = Model\User::get();
