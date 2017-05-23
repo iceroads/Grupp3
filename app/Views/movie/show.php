@@ -18,9 +18,10 @@
      <br/>
      <?php echo $movie->trailer; ?>
      <ul>
-     <?php foreach ($movie->users as $user) {
-    	echo "<li>$user->f_namn $user->e_namn</li>";
-	}
+     <?php foreach ($movie->users as $user) : ?>
+    	<li><a href="http://<?php echo BASE_PATH; ?>/user/show/<?php echo $user->id; ?>"><?php echo $user->name(); ?></a></li>
+	<?php
+        endforeach;
 	?>
 	</ul>
 
