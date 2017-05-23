@@ -17,19 +17,19 @@ class Form extends Controller {
 		if (isset($_POST['f_namn'])) {
 			$input['f_namn'] = $_POST['f_namn'];
 		} else {
-			$errors[] = "Du har inte skrivit in förnamn!";
+			$errors[] = "förnamn ";
 		}
 
 		if (isset($_POST['e_namn'])) {
 			$input['e_namn'] = $_POST['e_namn'];
 		} else {
-			$errors[] = "Du har inte skrivit in efternamn!";
+			$errors[] = "efternamn ";
 		}
 
 		if (isset($_POST['birthdate'])) {
 			$input['birthdate'] = $_POST['birthdate'];
 		} else {
-			$errors[] = "Du har inte skrivit in födelsedag!";
+			$errors[] = "födelsedag ";
 		}
 
 		if (isset($_POST['info'])) {
@@ -51,10 +51,10 @@ class Form extends Controller {
 				}
 			}
  		} else {
- 			echo "Kunde inte skapa skådespelare!<br/>";
+ 			echo "<div class=container>Kunde inte skapa skådespelare!<br/>Du har inte valt; </div>";
  			// sök igenom errors array efter felmedelanden och skriv ut dem
  			foreach ($errors as $error) {
- 				echo $error . "<br>";
+ 				echo "<div class=container><div class=list>" . $error . "</div></div>";
  			}
  		}
 

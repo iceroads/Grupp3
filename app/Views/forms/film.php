@@ -18,7 +18,7 @@
     <?php foreach ($producers as $producer) : ?>
       <option id="<?php echo $producer->id; ?>"><?php echo $producer->name(); ?></option>
     <?php endforeach; ?>
-  </select>
+  </select><br>
 
   <label for="writer">Writer:</label>
   <select name="writer" id="writer">
@@ -26,7 +26,7 @@
     <?php foreach ($writers as $writer) : ?>
       <option id="<?php echo $writer->id; ?>"><?php echo $writer->name(); ?></option>
     <?php endforeach; ?>
-  </select>
+  </select><br>
 
   <label for="rate">Rating:</label>
   <select name="rates" id="rate">
@@ -68,7 +68,7 @@
 
   <input type="submit" name="submit" value="Spara">
 </form>
-
+  
 </body>
 </html>
 <pre>

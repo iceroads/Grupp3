@@ -18,9 +18,10 @@
   <label for="url">Url till bild:</label>
   <input type="url" name="url" id="url"><br>
 
+  <label for="role">Välj Roller:</label><ul>
   <?php foreach ($roles as $role) :?>
     <input type="checkbox" name="role[]" value="<?php echo $role->id ?>"> <?php echo $role->roll ?><br>
-  <?php endforeach; ?>
+  <?php endforeach; ?></ul><br>
 
 
   <label for="info">Biografi:</label><br>
