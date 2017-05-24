@@ -1,5 +1,5 @@
-<?php get_header($user->f_namn . " ". $user->e_namn); ?>
-<h1><?php echo $user->f_namn . " ". $user->e_namn ?></h1>
+<?php get_header($user->name()); ?>
+<h1><?php echo $user->name() ?></h1>
 
 <img src="<?php echo $user->bild ?>">
 

@@ -19,4 +19,17 @@ class User extends Controller implements ControllerInterface {
     	->orwhere('writer', $user->id)->get();
     	include("../app/Views/user/show.php");
 	}
+    
+    public function userToJson() {
+        $users = Model\User::get();
+            $JsonData = [];
+        foreach ($users as $user) {
+            $uservalue["name"]= $user->name();
+            $uservalue["id"]= $user->id;
+            array_push($JsonData, $uservalue);
+        }
+        header('Content-Type: application/json');
+        echo json_encode($JsonData);
+    }
+    
 }

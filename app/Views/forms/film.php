@@ -1,22 +1,22 @@
-<?php get_header(); ?>
-     
-<html lang="sv">
-<head>
-    <meta charset="UTF-8">
-    <title>Lägg till film</title>
-</head>
-<body>
+<?php get_header("Add Movie"); ?>
 
 <form method="POST">
-  <h1>Lägg till film</h1><br>
+  <h1>Add movie</h1><br>
   <label for="titel">Titel:</label>
   <input type="text" name="titel" id="titel"><br>
+
+<label for="star">Stars:</label>
+<input type="text" id="starInput" name="autocomplete" class="starInput" placeholder="Actor">
+  <button class="btn addStar">Lägg till</button><br>
+<ul class="starList">
+</ul>
+
 
   <label for="producer">Producer:</label>
   <select name="producer" id="producer">
     <option value="0">--   Välj  --</option>
     <?php foreach ($producers as $producer) : ?>
-      <option id="<?php echo $producer->id; ?>"><?php echo $producer->name(); ?></option>
+      <option value="<?php echo $producer->id; ?>"><?php echo $producer->name(); ?></option>
     <?php endforeach; ?>
   </select><br>
 
@@ -24,7 +24,7 @@
   <select name="writer" id="writer">
     <option value="0">--   Välj  --</option>
     <?php foreach ($writers as $writer) : ?>
-      <option id="<?php echo $writer->id; ?>"><?php echo $writer->name(); ?></option>
+      <option value="<?php echo $writer->id; ?>"><?php echo $writer->name(); ?></option>
     <?php endforeach; ?>
   </select><br>
 
@@ -68,10 +68,16 @@
 
   <input type="submit" name="submit" value="Spara">
 </form>
-  
-</body>
-</html>
-<pre>
+  <div>
+      <?php if (!empty($errors)){
+        echo '<div class="container jumbotron alert alert-danger">';
+        echo "Kunde inte skapa film!<br>Du har inte valt;<br>";
+        $error = implode(", ", $errors);
+        echo $error;
+        echo '</div>';
+      } ?>
+  </div>
+</div>
 
 <?php get_footer(); ?>
   

@@ -14,7 +14,7 @@ class Movie extends Controller implements ControllerInterface {
 	}
 	public function show($id){
 		$movie = Model\Movie::find($id);
-		$users = new Model\User;
+		$users = new \App\Models\User;
 		
 		include("../app/Views/movie/show.php");
 
